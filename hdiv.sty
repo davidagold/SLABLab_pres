@@ -1,0 +1,519 @@
+% Unruly macro repository for presentation
+\NeedsTeXFormat{LaTeX2e}[1994/06/01]
+\ProvidesPackage{hdiv}
+  [2017/06/11 v0.01 LaTeX package for my own purpose]
+
+% COMMANDS TO MOVE
+\newcommand{\setcomp}[1]{\widebar{#1}}
+\newcommand{\equals}{\,=\,}
+\newcommand{\aequals}{\,&=\,}
+\newcommand{\smallpad}[1]{\,#1\,}
+\newcommand{\relates}[1]{\,#1\,}
+\newcommand{\arelates}[1]{\,&#1\,}
+\newcommand{\1}[1]{\mathbbm{1}\{#1\}}
+\newcommand{\kp}{\otimes}
+
+% Begin/End
+\newcommand{\be}{\begin{equation}}
+\newcommand{\ee}{\end{equation}}
+\newcommand{\benn}{\begin{equation*}}
+\newcommand{\eenn}{\end{equation*}}
+
+% Theorem-like Environments
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{conj}[thm]{Conjecture}
+\newtheorem{cor}[thm]{Corollary}
+\newtheorem{lem}[thm]{Lemma}
+\newtheorem{prop}[thm]{Proposition}
+{\theoremstyle{definition} \newtheorem{exa}[thm]{Example}}
+{\theoremstyle{definition} \newtheorem{defi}[thm]{Definition}}
+\newtheorem{exe}[thm]{Exercise}
+{\theoremstyle{remark} \newtheorem{rek}[thm]{Remark}}
+\newtheorem{que}[thm]{Question}
+\newtheorem{prob}[thm]{Problem}
+\newtheorem{cla}[thm]{Claim}
+\newtheorem{esti}[thm]{Estimation}
+{\theoremstyle{definition} \newtheorem{assu}[thm]{Assumption}}
+{\theoremstyle{definition} \newtheorem{cond}[thm]{Condition}}
+{\theoremstyle{definition} \newtheorem{scenario}[thm]{Scenario}}
+{\theoremstyle{definition} \newtheorem{prog}[thm]{Program}}
+
+% Two-Case and Three-Case Definitions
+\newcommand{\twocase}[5]{#1 \begin{cases} #2 & \text{#3}\\ #4
+&\text{#5} \end{cases}   }
+\newcommand{\threecase}[7]{#1 \begin{cases} #2 &
+\text{#3}\\ #4 &\text{#5}\\ #6 &\text{#7} \end{cases}   }
+
+% Fractions
+\newcommand{\foh}{\frac{1}{2}}
+\newcommand{\foq}{\frac{1}{4}}
+\newcommand{\fon}{\frac{1}{n}}
+
+% Blackboard Letters
+\newcommand{\R}{\ensuremath{\mathbb{R}}}
+\newcommand{\C}{\ensuremath{\mathbb{C}}}
+%\newcommand{\Z}{\ensuremath{\mathbb{Z}}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\W}{\mathbb{W}}
+\newcommand{\sph}{\mathbb{S}}
+
+% Greek Letters
+\newcommand{\ga}{\alpha}
+\newcommand{\gb}{\beta}
+\newcommand{\gep}{\epsilon}
+\newcommand{\vgep}{\varepsilon}
+\newcommand{\gth}{\theta}
+\newcommand{\vgth}{\vartheta}
+\newcommand{\gk}{\kappa}
+\newcommand{\gl}{\lambda}
+\newcommand{\gs}{\sigma}
+\newcommand{\gd}{\delta}
+
+\newcommand{\bgb}{\bs{\gb}}
+
+% Matrix
+\newcommand{\mattwo}[4]
+{\left(\begin{array}{cc}
+                        #1  & #2   \\
+                        #3 &  #4
+                          \end{array}\right) }
+\newcommand{\matthree}[9]
+{\left(\begin{array}{ccc}
+                        #1  & #2 & #3  \\
+                        #4 &  #5 & #6 \\
+                        #7 & #8 & #9 \\
+                          \end{array}\right) }
+
+% Linear Algebra
+\newcommand{\col}{\mathrm{col} \,}
+\newcommand{\im}{\mathrm{im} \,}
+\newcommand{\rank}{\mathrm{rank} \,}
+\newcommand{\trace}{\mathrm{tr} \,}
+\newcommand{\laspan}{\mathrm{span} \,}
+\newcommand{\iprod}[2]{\big\langle #1, \, #2 \big\rangle}
+\newcommand{\tr}{\mathrm{T}}
+\newcommand{\diag}{\mathrm{diag}}
+\newcommand{\Id}{\bs{I}}
+
+% Calculus
+% \newcommand{\diff}[2]{\frac{d#1}{d#2}}
+\newcommand{\pdd}[2]{\frac{\partial #1}{\partial #2}}
+
+% Operators
+\newcommand{\Ad}{\mathrm{Ad}}
+\newcommand{\Lie}[1]{\mathrm{Lie}(#1)}
+\newcommand{\sign}{\mathrm{sign} \,}
+\newcommand{\supp}{\mathrm{supp} \,}
+\newcommand{\comp}{\mathrm{C}}
+
+% Probability/Statistics
+\newcommand{\Prb}{\mathrm{P}}
+\newcommand{\E}{\mathrm{E}}
+\newcommand{\En}{\mathbb{E}_n}
+% \newcommand{\Gn}{\mathbb{G}_n}
+\newcommand{\Gn}{\sqrt{n}\En}
+\newcommand{\bias}{\mathrm{bias}}
+\newcommand{\var}{\mathrm{var}}
+\newcommand{\cov}{\mathrm{cov}}
+\newcommand{\cid}{\overset{d}{\to}}
+\newcommand{\SE}{\mathrm{SE}}
+\newcommand{\Cor}{\mathrm{cor}}
+
+% Distributions
+\newcommand{\Bern}{\mathrm{Bernoulli}}
+\newcommand{\Poisson}{\mathrm{Poisson}}
+\newcommand{\Normal}{\mathcal{N}}
+\newcommand{\DGamma}{\mathrm{Gamma}}
+\newcommand{\Unif}{\mathrm{Uniform}}
+
+% OTHER
+\newcommand{\set}[1]{\{#1\}}
+\newcommand{\bset}[1]{\big\{#1\big\}}
+\newcommand{\vset}[2]{#2\{#1#2\}}
+\newcommand{\0}{\bs{0}}
+
+% Formatting
+\newcommand{\bs}[1]{\boldsymbol{#1}}
+\newcommand{\ignore}[1]{}
+
+% Data
+\newcommand{\dyc}{y}
+\newcommand{\dyi}{\dyc_i}
+\newcommand{\dy}{\bs{\dyc}}
+\newcommand{\dxc}{x}
+\newcommand{\dxij}{\dxc_{ij}}
+\newcommand{\dx}{\bs{\dxc}}
+\newcommand{\ddc}{d}
+\newcommand{\ddij}{\ddc_{ij}}
+\newcommand{\ddijh}{\hat{\ddc}_{ij}}
+\newcommand{\dd}{\bs{\ddc}}
+\newcommand{\ddch}{\hat{\ddc}}
+\newcommand{\dzc}{z}
+\newcommand{\dzik}{\dzc_{ik}}
+\newcommand{\dz}{\bs{\dzc}}
+\newcommand{\duc}{u}
+\newcommand{\dui}{\duc_i}
+\newcommand{\du}{\bs{\duc}}
+\newcommand{\duch}{\hat{\duc}}
+\newcommand{\duih}{\duch_i}
+\newcommand{\duh}{\hat{\du}}
+\newcommand{\dutc}{\tilde{u}}
+\newcommand{\dut}{\tilde{\du}}
+\newcommand{\dvc}{v}
+\newcommand{\dvij}{\dvc_{ij}}
+\newcommand{\dv}{\bs{\dvc}}
+
+\newcommand{\dZ}{\bs{Z}}
+\newcommand{\dD}{\bs{D}}
+\newcommand{\dDh}{\widehat{\dD}}
+\newcommand{\ddh}{\hat{\dd}}
+\newcommand{\dX}{\bs{X}}
+\newcommand{\dV}{\bs{V}}
+
+% Dimensions
+\newcommand{\n}{n}
+\newcommand{\px}{p_{\dx}}
+\newcommand{\pz}{p_{\dz}}
+
+% Regression Quantities
+\newcommand{\rbc}{\gb}
+\newcommand{\rbj}{\rbc_j}
+\newcommand{\rb}{\bs{\rbc}}
+\newcommand{\rbdb}{\tilde{\rb}}
+\newcommand{\rbdbj}{\tilde{\rbc}_j}
+\newcommand{\rbla}{\hat{\rb}}
+\newcommand{\rblaj}{\hat{\rbc}_j}
+
+\newcommand{\rac}{\ga}
+\newcommand{\ra}{\bs{\rac}}
+\newcommand{\rah}{\hat{\ra}}
+\newcommand{\rA}{\bs{\mathrm{A}}}
+\newcommand{\rAh}{\widehat{\rA}}
+
+\newcommand{\rS}{\bs{\Sigma}}
+\newcommand{\rSh}{\widehat{\rS}}
+\newcommand{\rSd}{\rS_{\dd}}
+\newcommand{\rSdn}{\rS_{\dd,\n}}
+\newcommand{\rSdh}{\rSh_{\dd}}
+\newcommand{\rSdhjj}{\rSh_{\dd,jj}}
+\newcommand{\rSdt}{\tilde{\rS}_{\dd}}
+\newcommand{\rSdb}{\widebar{\rS}_{\dd}}
+\newcommand{\rSx}{\rS_{\dx}}
+\newcommand{\rSxh}{\hat{\rS}_{\dx}}
+
+\newcommand{\rtc}{\theta}
+\newcommand{\rT}{\bs{\Theta}}
+\newcommand{\rTjj}{\rT_{jj}}
+\newcommand{\rTjjh}{\rTh_{jj}}
+\newcommand{\rTn}{\rT_{\n}}
+\newcommand{\rt}{\bs{\rtc}}
+\newcommand{\rth}{\hat{\rt}}
+\newcommand{\rTh}{\widehat{\rT}}
+
+\newcommand{\sd}{\sigma}
+\newcommand{\sdu}{\sd_u}
+\newcommand{\sdun}{\sd_{u,\n}}
+\newcommand{\sduh}{\hat{\sd}_u}
+\newcommand{\sdv}{\sd_v}
+\newcommand{\sdvj}{\sd_{v^j}}
+\newcommand{\sdvk}[1]{\sd_{\dvc^{#1}}}
+\newcommand{\sdvkn}[1]{\sd_{\dvc^{#1},\n}}
+\newcommand{\sdvh}{\hat{\sd}_{v}}
+% \newcommand{\sduv}{\bs{\sd}_{u\dv}}
+\newcommand{\sduv}{\sd_{u\dv}}
+\newcommand{\sduvj}[1]{\sd_{uv^{#1}}}
+\newcommand{\maxsdv}{\sd_{\dv}}
+\newcommand{\csf}{\bs{\mathrm{c}}}
+
+\newcommand{\Mra}{M_{\rA}}
+\newcommand{\Mb}{M_{\rb}}
+\newcommand{\Midx}{M}
+\newcommand{\Mdiff}{C}
+\newcommand{\Mrt}{M_{\rT}}
+
+%\newcommand{\Sb}{S_{\rb}}
+\newcommand{\Sb}{S_{\rb}}
+\newcommand{\Sbn}{S_{\rb,\n}}
+% \newcommand{\Sbc}{\setcomp{S}_{\rb}}
+\newcommand{\Sbc}{\Sb^{\comp}}
+\newcommand{\Sa}{S}
+\newcommand{\Saj}{S_{j}}
+\newcommand{\Sajn}{S_{j,n}}
+% \renewcommand{\sb}{s_{\rb}}
+\renewcommand{\sb}{s_{\rb}}
+\newcommand{\sa}{s_{\rA}}
+\newcommand{\saj}{s_{\ra^j}}
+\newcommand{\scc}{\psi}
+\newcommand{\scca}{\scc_{\rA}}
+\newcommand{\sccb}{\scc_{\rb}}
+
+\newcommand{\rSz}{\rS_{\dz}}
+\newcommand{\rSzh}{\widehat{\rS}_{\dz}}
+\newcommand{\rSv}{\rS_{\dv}}
+\newcommand{\rSyx}{\rS_{y\dx}}
+\newcommand{\rSuv}{\rS_{u\dv}}
+
+% Estimators
+\newcommand{\ci}{\hat{\mathcal{I}}_\ga}
+\newcommand{\cij}{\hat{\mathcal{I}}_{\ga,j}}
+
+% Other Quantities
+\newcommand{\tune}{r}
+\newcommand{\tuneb}{\tune_{\rb}}
+\newcommand{\tunebn}{\tune{\tb,\n}}
+\newcommand{\tunej}{\tune_j}
+\newcommand{\tunea}{\tune_{\rA}}
+\newcommand{\tunefs}{\bs{\tune}}
+\newcommand{\tuneV}{\lambda_{\dV}}
+\newcommand{\tuneu}{\lambda_{\du}}
+\newcommand{\subder}{\hat{\bs{\kappa}}}
+\newcommand{\subderc}{\hat{\kappa}}
+\newcommand{\ccomp}{\phi}
+\newcommand{\ccompb}{\ccomp_{\rb}}
+\newcommand{\ccompbn}{\ccomp_{\rb,\n}}
+\newcommand{\ccompmin}{\ccomp_*}
+\newcommand{\ccompmax}{\ccomp^*}
+\newcommand{\ccompamin}{\ccomp_{\rA,*}}
+\newcommand{\ccompj}{\ccomp_j}
+\newcommand{\ccompjn}{\ccomp_{j,n}}
+\newcommand{\ccompa}{\ccomp_{\rA}}
+\newcommand{\ccompamax}{\ccomp_{\rA}^*}
+\newcommand{\event}{\mathcal{E}}
+
+\newcommand{\m}{\bs{m}}
+\newcommand{\e}{\bs{e}}
+\newcommand{\h}{\bs{h}}
+
+\newcommand{\wjn}{W_{j,n}}
+\newcommand{\zjn}{Z_{j,n}}
+\newcommand{\zj}{Z_j}
+\newcommand{\wjse}{\omega_j}
+\newcommand{\wjseh}{\hat{\omega}_j}
+
+\newcommand{\At}{\bs{\mathrm{A}}}
+\newcommand{\I}{\mathrm{I}}
+
+\newcommand{\ones}{\bs{1}}
+\newcommand{\zeros}{\bs{0}}
+\newcommand{\ip}[1]{\langle#1\rangle}
+\newcommand{\ipp}[2]{#2\langle#1 #2\rangle}
+
+\newcommand{\zmax}{\overset{*}{\dz}}
+\newcommand{\zmaxtwo}{\|\zmax/n^{\foh}\|_2}
+\newcommand{\zmaxtowsquare}{\|\zmax/n\|_2^2}
+% \newcommand{\}
+
+% MUTABLES
+\newcommand{\progarg}{}
+
+% SECTION: Assumptions
+\newcommand{\cone}{\mathcal{C}}
+\newcommand{\Ccomp}{\mathcal{G}}
+\newcommand{\gassumptions}{Assumptions~\ref{assu:regA}-\ref{assu:regT}}
+% \newcommand{\assugaussian}{}
+
+% SECTION: Oracle inequality
+\newcommand{\newu}{\tilde{\du}}
+\newcommand{\diff}{\bs{\delta}}
+\newcommand{\Tnewu}{\mathcal{T}_{\newu}}
+\newcommand{\maxga}{\maxjpx\|\ra^j\|_1} %% DEAL WITH THIS!!!
+\newcommand{\eigmin}{\Lambda_{\min}}
+\newcommand{\eigmax}{\Lambda_{\max}}
+\newcommand{\ccmin}{\ccomp^2_{\dagger}}
+\newcommand{\lol}{v} %% DEAL WITH THIS
+\newcommand{\aQ}{\bs{Q}}
+\newcommand{\aM}{\bs{M}}
+\newcommand{\am}{\bs{m}}
+\newcommand{\amc}{m}
+\newcommand{\idx}{S}
+\newcommand{\sidx}{s}
+\newcommand{\ccc}{c_{\idx}}
+
+% SECTION: Empirical process term
+\newcommand{\maxjpx}{\max_{j\in[\px]}}
+\newcommand{\maxkpx}{\max_{k\in[\px]}}
+\newcommand{\maxjkpx}{\max_{j,k\in[\px]}}
+\newcommand{\maxhpz}{\max_{h\in[\pz]}}
+\newcommand{\maxhpx}{\max_{h\in[\px]}}
+\newcommand{\maxin}{\max_{i\in[n]}}
+\newcommand{\maxerrverbfs}{\|\rAh-\rA\|_{L_1}}
+\newcommand{\maxerrfs}{\delta_{\rAh}}
+\newcommand{\errverbss}{\|\rbla-\rb\|_1}
+\newcommand{\errss}{\hat{\delta}_{\rb}}
+% \newcommand{\maxzzn}{\hat{\sigma}_{\dZ}^{*}}
+\newcommand{\maxzzn}{\hat{\sigma}_{\dZ}}
+\newcommand{\maxzzntt}{\hat{\sigma}_{\dZ}^{*\frac{3}{2}}}
+% \newcommand{\maxzn}[1]{\hat{\sigma}_{\dZ,#1}^*}
+\newcommand{\maxzn}[1]{\hat{\sigma}_{\dZ,#1}}
+% \newcommand{\maxsdz}{\sigma_{\dZ}^*}
+\newcommand{\maxsdz}{\sigma_{\dZ}}
+
+% SECTION: One-step correction
+\newcommand{\remc}{f}
+\newcommand{\rem}{\bs{\remc}}
+\newcommand{\remj}[1]{\remc_{#1,j}}
+
+% SECTION: Relaxed inverse
+\newcommand{\obj}{Q}
+\newcommand{\uni}{\mathcal{U}}
+\newcommand{\tuni}{q}
+\newcommand{\suni}{s_{\rT}}
+\newcommand{\uniclass}{\uni(\Mrt,\tuni,\suni)}
+\newcommand{\basis}{\bs{e}}
+\newcommand{\tf}{\mu}
+\newcommand{\cprc}{c_{\mathrm{r}}}
+\newcommand{\cfeas}{c_\mathrm{inv}}
+\newcommand{\ta}{a}
+% \newcommand{\svmin}{\mathrm{sv}_{\min}}
+% \newcommand{\svmax}{\mathrm{sv}_{\max}}
+\newcommand{\svmin}{\sigma_{\min}}
+\newcommand{\svmax}{\sigma_{\max}}
+\newcommand{\subgauss}{\tau}
+\newcommand{\Tinv}{\mathcal{T}_{\rT}}
+
+% SECTION: Asymptotic Normality
+\newcommand{\Wjn}{W_{j,n}}
+
+% SECTION: Rates
+% \newcommand{\maxzj}{}
+\newcommand{\gauss}{\bs{h}}
+\newcommand{\cepg}{c_{\mathrm{ep}}}
+\newcommand{\T}{\mathcal{T}}
+\newcommand{\TA}{\mathcal{T}_{\rA}}
+\newcommand{\TV}{\mathcal{T}_{\dV}}
+\newcommand{\Tvj}{\mathcal{T}_{\dv^j}}
+\newcommand{\TVcomp}{\setcomp{\mathcal{T}}_{\dV}}
+\newcommand{\Tu}{\mathcal{T}_{\du}}
+\newcommand{\Tucomp}{\setcomp{\mathcal{T}}_{\du}}
+
+\newcommand{\zcovmax}{\nu_{\Z}^*}
+\newcommand{\gmaxj}{\nu_{j}^*}
+
+% SUBSECTION: Remainders
+\newcommand{\cprcr}{c_{\tuni}}
+
+% SUBSECTION: Weak Convergence
+\newcommand{\gmin}{\nu}
+\newcommand{\wl}{Z}
+\newcommand{\znj}{\wl_{n,j}}
+\newcommand{\gsmin}{\gs_*}
+\newcommand{\gsmax}{\gs^*}
+\newcommand{\cdfn}{\Phi}
+\newcommand{\g}{\bs{g}}
+
+% SUBSECTION: Asymptotic Normality
+\newcommand{\aB}{\bs{B}}
+% \newcommand{\\rSzcstar}{\nu_{\dz}^*}
+\newcommand{\ipn}[2]{\|#1\|_{#2}}						% inner-product norm
+\newcommand{\lfx}{\xi_{i}}
+\newcommand{\lfxo}{\xi_1}
+\newcommand{\caa}{\tau}
+\newcommand{\cbb}{\zeta}
+\newcommand{\Me}{M}
+\newcommand{\Ind}[1]{\mathbbm{1}#1}
+\newcommand{\Tlfx}{\mathcal{T}_{\lfx}}
+\newcommand{\Tdx}{\mathcal{T}_i}
+\newcommand{\Tlfxo}{\mathcal{T}_{\lfxo}}
+\newcommand{\errt}{\tilde{\du}}
+\newcommand{\errtc}{\tilde{\duc}}
+\newcommand{\sumin}{\sum_{i=1}^n}
+\newcommand{\errtco}{\errtc_1}
+\newcommand{\duti}{\errtc_i}
+\newcommand{\wsj}{\ws_j}
+\newcommand{\rTmax}{\nu_{\rT}^*}
+\newcommand{\cnb}{c_0}
+\newcommand{\gramd}{\bar{\bs{\Sigma}}}
+\newcommand{\ctmin}{\vartheta_*}
+\newcommand{\limni}{\lim_{n\to\infty}}
+\newcommand{\Ii}[2]{\I_{#1\mathrm{#2},i}}
+\newcommand{\Mea}{\Me_1}
+\newcommand{\Meb}{\Me_2}
+
+% SUBSECTION: Design
+\newcommand{\cvg}{\mathrm{cvg}}
+\newcommand{\cvgh}{\widehat{\cvg}}
+\newcommand{\len}{\mathrm{len}}
+\newcommand{\lenh}{\widehat{\len}}
+\newcommand{\SEh}{\widehat{\SE}}
+\newcommand{\rSzcs}{\rSz^{\mathrm{CS}}}
+\newcommand{\rSztz}{\rSz^{\mathrm{TZ}}}
+
+
+% Other Formatting
+%\usepackage{amsmath}
+\makeatletter
+\let\save@mathaccent\mathaccent
+\newcommand*\if@single[3]{%
+  \setbox0\hbox{${\mathaccent"0362{#1}}^H$}%
+  \setbox2\hbox{${\mathaccent"0362{\kern0pt#1}}^H$}%
+  \ifdim\ht0=\ht2 #3\else #2\fi
+  }
+%The bar will be moved to the right by a half of \macc@kerna, which is computed by amsmath:
+\newcommand*\rel@kern[1]{\kern#1\dimexpr\macc@kerna}
+%If there's a superscript following the bar, then no negative kern may follow the bar;
+%an additional {} makes sure that the superscript is high enough in this case:
+\newcommand*\widebar[1]{\@ifnextchar^{{\wide@bar{#1}{0}}}{\wide@bar{#1}{1}}}
+%Use a separate algorithm for single symbols:
+\newcommand*\wide@bar[2]{\if@single{#1}{\wide@bar@{#1}{#2}{1}}{\wide@bar@{#1}{#2}{2}}}
+\newcommand*\wide@bar@[3]{%
+  \begingroup
+  \def\mathaccent##1##2{%
+%Enable nesting of accents:
+    \let\mathaccent\save@mathaccent
+%If there's more than a single symbol, use the first character instead (see below):
+    \if#32 \let\macc@nucleus\first@char \fi
+%Determine the italic correction:
+    \setbox\z@\hbox{$\macc@style{\macc@nucleus}_{}$}%
+    \setbox\tw@\hbox{$\macc@style{\macc@nucleus}{}_{}$}%
+    \dimen@\wd\tw@
+    \advance\dimen@-\wd\z@
+%Now \dimen@ is the italic correction of the symbol.
+    \divide\dimen@ 3
+    \@tempdima\wd\tw@
+    \advance\@tempdima-\scriptspace
+%Now \@tempdima is the width of the symbol.
+    \divide\@tempdima 10
+    \advance\dimen@-\@tempdima
+%Now \dimen@ = (italic correction / 3) - (Breite / 10)
+    \ifdim\dimen@>\z@ \dimen@0pt\fi
+%The bar will be shortened in the case \dimen@<0 !
+    \rel@kern{0.6}\kern-\dimen@
+    \if#31
+      \overline{\rel@kern{-0.6}\kern\dimen@\macc@nucleus\rel@kern{0.4}\kern\dimen@}%
+      \advance\dimen@0.4\dimexpr\macc@kerna
+%Place the combined final kern (-\dimen@) if it is >0 or if a superscript follows:
+      \let\final@kern#2%
+      \ifdim\dimen@<\z@ \let\final@kern1\fi
+      \if\final@kern1 \kern-\dimen@\fi
+    \else
+      \overline{\rel@kern{-0.6}\kern\dimen@#1}%
+    \fi
+  }%
+  \macc@depth\@ne
+  \let\math@bgroup\@empty \let\math@egroup\macc@set@skewchar
+  \mathsurround\z@ \frozen@everymath{\mathgroup\macc@group\relax}%
+  \macc@set@skewchar\relax
+  \let\mathaccentV\macc@nested@a
+%The following initialises \macc@kerna and calls \mathaccent:
+  \if#31
+    \macc@nested@a\relax111{#1}%
+  \else
+%If the argument consists of more than one symbol, and if the first token is
+%a letter, use that letter for the computations:
+    \def\gobble@till@marker##1\endmarker{}%
+    \futurelet\first@char\gobble@till@marker#1\endmarker
+    \ifcat\noexpand\first@char A\else
+      \def\first@char{}%
+    \fi
+    \macc@nested@a\relax111{\first@char}%
+  \fi
+  \endgroup
+}
+\makeatother
+
+
+\endinput
+%%
+%% End of file `hdiv.sty'.
